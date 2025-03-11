@@ -1,0 +1,7 @@
+Download and install node js
+run node -v to check if node is installed
+ run npm install -g @angular/cli@latest to install the angular cli
+ open project in vs code and open new terminal 
+run ng serve to start the server.
+you will be shown the port on which the server is running, usually its 4200
+hold down  ctrl and click on link and it will open in browser

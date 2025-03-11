@@ -1,0 +1,271 @@
+<div style="background-color: #f8f9fa">
+  <div class="page-header">
+    <div class="image-overlay">
+      <h2 style="text-align: center">Bills</h2>
+    </div>
+  </div>
+  <div *ngIf="dataSource">
+    <mat-tab-group>
+      <mat-tab label="ALL BILLS" class="label">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">List of All Bills</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <h6
+              (click)="viewDetails(bill.id)"
+              style="
+                cursor: pointer;
+                text-align: center;
+                color: #105110;
+                text-decoration: none;
+                margin-top: 20px;
+              "
+            >
+              {{ bill.title }}
+            </h6>
+            <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="DRAFTING" class="label">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">
+            Work in Progress in the Department
+          </h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'Department'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="MINISTRY CLARIFICATION">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">
+            Awaiting Clarification from Ministry
+          </h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'Ministry'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="DISPATCHED TO MINISTRIES">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">Dispatched to Ministries</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'Dispatched'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="CABINET">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">Cabinet/CCL</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'Cabinet'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="LAW-MAKING">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">Undergoing Law-making Process</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'LawMaking'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div> </mat-tab
+      ><mat-tab label="PARLIAMENT">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">
+            Referred back to Parliament by President
+          </h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'PresidentToParliament'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div> </mat-tab
+      ><mat-tab label="PASSED">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">Passed by Parliament</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'Passed'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div> </mat-tab
+      ><mat-tab label="PRESIDENTIAL ASSENT">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">Awaiting Presidential Assent</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'WaitingAssent'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div> </mat-tab>
+        <mat-tab label="ENACTED">
+        <div class="tracking card container">
+          <h1 class="mt-5 mb-2 text-center">Assented to by President</h1>
+          <p class="text-center" style="color: #9b0f0f; font-weight: 600">
+            Click on bill to view more
+          </p>
+          <div *ngFor="let bill of legislation" class="bill-item">
+            <div *ngIf="bill.status === 'Assented'">
+              <h6
+                (click)="viewDetails(bill.id)"
+                style="
+                  cursor: pointer;
+                  text-align: center;
+                  color: #105110;
+                  text-decoration: none;
+                  margin-top: 20px;
+                "
+              >
+                {{ bill.title }}
+              </h6>
+              <!-- <p style="text-align: center">{{ bill.summary }}</p> -->
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="mb-5">
+      <mat-paginator
+        class="custom-pagination"
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
