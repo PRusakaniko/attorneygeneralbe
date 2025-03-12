@@ -27,7 +27,7 @@ MEDIA_URL = '/media/'
 SECRET_KEY = 'django-insecure-0o@hwg3ex($sp(9mw95*q^#%(59%qa0m-+k101tp&@#a8)$zs2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'tinymce', 
     'import_export',
+    'whitenoise',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
