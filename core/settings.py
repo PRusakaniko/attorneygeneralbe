@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-0o@hwg3ex($sp(9mw95*q^#%(59%qa0m-+k101tp&@#a8)$zs2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://attorneygeneral.org.zw/', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['https://attorneygeneral.org.zw/', 'localhost', '127.0.0.1', '41.220.21.71']
 
 
 # Application definition
